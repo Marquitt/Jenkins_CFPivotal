@@ -17,10 +17,10 @@ pipeline {
 
                 withCredentials([[$class          : 'UsernamePasswordMultiBinding',
                                   credentialsId   : 'PCF_LOGIN',
-                                  usernameVariable: 'marco.contreras@softtek.com',
-                                  passwordVariable: 'Pokemon3608$']]) {
+                                  usernameVariable: 'USERNAME',
+                                  passwordVariable: 'PASSWORD']]) {
 
-                    sh '/usr/local/bin/cf login -a http://api.run.pivotal.io -u $marco.contreras@softtek.com -p $Pokemon3608$'
+                    sh '/usr/local/bin/cf login -a http://api.run.pivotal.io -u $USERNAME -p $PASSWORD'
                     sh '/usr/local/bin/cf push'
                 }
             }
